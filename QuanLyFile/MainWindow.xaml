@@ -45,8 +45,10 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="25"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <ComboBox IsEditable="True" Grid.Row="0" Grid.Column="0"></ComboBox>
-            <Image Source="Img/go.png" Grid.Row="0" Grid.Column="1"></Image>
+            <ComboBox IsEditable="True" Grid.Row="0" Grid.Column="0" Name="cmbAddress"></ComboBox>
+            <Button  Grid.Row="0" Grid.Column="1" Name="btnGo" Click="btnGo_Click">
+                <Image Source="Img/go.png"></Image>
+            </Button>
         </Grid>
         <Grid Grid.Row="3" Grid.Column="0">
             <Grid.ColumnDefinitions>

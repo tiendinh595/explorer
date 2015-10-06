@@ -66,7 +66,10 @@ namespace QuanLyFile
             TreeViewItem item = (TreeViewItem)sender;
             e.Handled = true;
             if (item.IsExpanded)
-                LoadContent(item.Tag.ToString(), "Folder", item);
+            {
+                LoadFolders(item.Tag.ToString(), item);
+                cmbAddress.Text = item.Tag.ToString();
+            }
         }
 
         private void mn_address_Click(object sender, RoutedEventArgs e)
@@ -104,7 +107,7 @@ namespace QuanLyFile
         }
 
 
-        private void LoadContent(string dirName, string type, TreeViewItem treiTmp)
+        private void LoadContent(string dirName, string type)
         {
             string[] list;
             string tag;
@@ -115,7 +118,7 @@ namespace QuanLyFile
             string[] arrExt = { ".png", ".jpg", ".jpeg" };
             if (list != null)
             {
-                treiTmp.Items.Clear();
+                wrp_lisFile.Children.Clear();
                 foreach (string fileName in list)
                 {
                     StackPanel stp = new StackPanel();
@@ -154,17 +157,55 @@ namespace QuanLyFile
 
                     stp.Children.Add(text);
 
+                    wrp_lisFile.Children.Add(stp);
+                }
+            }
+        }
+
+        private void btnGo_Click(object sender, RoutedEventArgs e)
+        {
+            LoadContent(cmbAddress.Text, "Folder");
+            LoadContent(cmbAddress.Text, "File");
+        }
+
+        private void LoadFolders(string path, TreeViewItem treiTmp)
+        {
+            string[] list;
+            string tag;
+            list = LoadSubDir(path);
+            string[] arrExt = { ".png", ".jpg", ".jpeg" };
+            if (list != null)
+            {
+                treiTmp.Items.Clear();
+                foreach (string fileName in list)
+                {
+                    StackPanel stp = new StackPanel();
+                    stp.Orientation = Orientation.Horizontal;
+
+                    Image img = new Image();
+                    stp.Children.Add(img);
+
+                    TextBlock text = new TextBlock();
+                    
+                    DirectoryInfo fo = new DirectoryInfo(fileName);
+                    text.Text = fo.Name;
+                    tag = fo.FullName;
+                    img.Source = new BitmapImage(new Uri("Img/Folder.png", UriKind.Relative));
+                    img.Width = img.Height = 16;
+
+                    text.Margin = new Thickness(10, 0, 0, 0);
+
+                    stp.Children.Add(text);
+
                     TreeViewItem trei = new TreeViewItem();
-                    //trei.Expanded += new RoutedEventHandler(item_Expanded);
                     trei.Expanded += item_Expanded;
                     trei.Tag = tag;
                     trei.Header = stp;
                     trei.Items.Add("Loading...");
                     treiTmp.Items.Add(trei);
-                    
-
                 }
             }
+        
         }
 
     }
