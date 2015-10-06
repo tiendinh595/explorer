@@ -1,0 +1,13 @@
+D:\QuanLyFile\QuanLyFile\bin\Debug\QuanLyFile.exe
+D:\QuanLyFile\QuanLyFile\bin\Debug\QuanLyFile.pdb
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\MainWindow.baml
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\MainWindow.g.cs
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\App.g.cs
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile_MarkupCompile.cache
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile.g.resources
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile.Properties.Resources.resources
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile.exe
+D:\QuanLyFile\QuanLyFile\obj\x86\Debug\QuanLyFile.pdb
