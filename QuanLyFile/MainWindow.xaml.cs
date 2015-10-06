@@ -23,5 +23,21 @@ namespace QuanLyFile
         {
             InitializeComponent();
         }
+
+        private void mn_address_Click(object sender, RoutedEventArgs e)
+        {
+            if (mn_address.IsChecked)
+                grd_address.Visibility = System.Windows.Visibility.Visible;
+            else
+                grd_address.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+        private void mn_standar_Click(object sender, RoutedEventArgs e)
+        {
+            if (mn_standar.IsChecked)
+                toolbar.Visibility = System.Windows.Visibility.Visible;
+            else
+                toolbar.Visibility = System.Windows.Visibility.Collapsed;
+        }
     }
 }
